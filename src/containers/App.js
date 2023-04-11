@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 
 // aos
 import AOS from 'aos'
@@ -26,14 +27,14 @@ const App = () => {
   return (
     <BrowserRouter>
       <Nav />
-      <Switch>
-        <Route path='/home' component={Home} />
-        <Route path='/offer' component={Offer} />
-        <Route path='/realizations' component={Realizations} />
-        <Route path='/contact' component={Contact} />
-        <Route path='/privacy-policy' component={PrivacyPolicy} />
-        <Redirect to='/home' />
-      </Switch>
+      <Routes>
+        <Route path='/home' element={<Home />} />
+        <Route path='/offer' element={<Offer />} />
+        <Route path='/realizations' element={<Realizations />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/privacy-policy' element={<PrivacyPolicy />} />
+        <Route path='*' element={<Home />} />
+      </Routes>
       <AlertPrivacy />
       <Footer />
     </BrowserRouter >
