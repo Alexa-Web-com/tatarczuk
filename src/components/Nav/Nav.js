@@ -27,10 +27,13 @@ const Nav = () => {
                     </div>
                 </NavLink>
                 <ul onClick={() => setIsOpenMobileMenu(false)} className={`${style.list} ${styleMobileMenu}`}>
-                    <li className={style.listItem}><NavLink to='/home' activeClassName={style.activeLink} className={style.listItemAnchor}>Strona główna</NavLink></li>
-                    <li className={style.listItem}><NavLink to='/offer' activeClassName={style.activeLink} className={style.listItemAnchor}>Oferta</NavLink></li>
-                    <li className={style.listItem}><NavLink to='/realizations' activeClassName={style.activeLink} className={style.listItemAnchor}>Realizacje</NavLink></li>
-                    <li className={style.listItem}><NavLink to='/contact' activeClassName={style.activeLink} className={style.listItemAnchor}>Kontakt</NavLink></li>
+                    {/* <li className={style.listItem}><NavLink to='/home' activeClassName={style.activeLink} className={style.listItemAnchor}>Strona główna</NavLink></li> */}
+
+                    <li className={style.listItem}><NavLink to='/home' className={({ isActive }) => isActive ? style.activeLink : style.listItemAnchor}>Strona główna</NavLink></li>
+
+                    <li className={style.listItem}><NavLink to='/offer' className={({ isActive }) => isActive ? style.activeLink : style.listItemAnchor}>Oferta</NavLink></li>
+                    <li className={style.listItem}><NavLink to='/realizations' className={({ isActive }) => isActive ? style.activeLink : style.listItemAnchor}>Realizacje</NavLink></li>
+                    <li className={style.listItem}><NavLink to='/contact' className={({ isActive }) => isActive ? style.activeLink : style.listItemAnchor}>Kontakt</NavLink></li>
                 </ul>
                 <div onClick={() => setIsOpenMobileMenu(!isOpenMobileMenu)} className={`${style.burgerMenu} ${styleMobileButtonBurger}`}>
                     <div className={style.burgerBtn}></div>
