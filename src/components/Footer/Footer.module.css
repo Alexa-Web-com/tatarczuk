@@ -32,7 +32,6 @@
 
 .link {
     cursor: pointer;
-
 }
 
 .link:hover {
@@ -44,6 +43,7 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .logo {
